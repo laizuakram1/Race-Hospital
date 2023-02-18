@@ -1,0 +1,19 @@
+.testmonial-bg{
+    background-image: url('../../../assets/icons/quote.svg');
+    background-repeat:no-repeat;
+    background-position-x: right;
+    background-size:15%;
+    margin-right:20px;
+}
+
+.review{
+    width:350px;
+    height:250px;
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    margin-top:100px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    
+}

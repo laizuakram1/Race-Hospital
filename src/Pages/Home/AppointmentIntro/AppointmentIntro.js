@@ -4,7 +4,7 @@ import doctor from '../../../assets/images/doctor-small.png';
 
 const AppointmentIntro = () => {
     return (
-        <div className='appointmentIntro-container mt-20 absolute'>
+        <div className='appointmentIntro-container mt-20'>
             <div className='grid md:grid-cols-2'>
                 <div className='doctor-img'>
                     <img src={doctor} alt="" />
