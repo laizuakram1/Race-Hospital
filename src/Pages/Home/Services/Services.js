@@ -59,14 +59,14 @@ const Services = () => {
                         </div>
                     </div>
                 </div>
-                <div className='transfusions'>
-                    <div className="card lg:card-side bg-base-100 shadow-xl p-10 grid md:grid-cols-2">
+                <div className='transfusions mt-10'>
+                    <div className="card lg:card-side bg-base-100 p-10 grid md:grid-cols-2">
                         <figure><img className='transfusion-img' src={treatment} alt="Album" /></figure>
                         <div className="card-body">
                             <h2 className="text-3xl font-bold"><span className='text-red-400'><BiDonateBlood className='inline mr-3'/>Blood</span><span className='text-green-400'>Bank</span></h2>
                             <p>We helps people to give human pure blood for safe life. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, ducimus fugiat doloribus eos quaerat quas impedit vel quidem temporibus dign issimos?</p>
                             <div className="card-actions justify-start">
-                                <button className="btn btn-success">Donate Blood</button>
+                                <button className="button">Donate Blood</button>
                             </div>
                         </div>
                     </div>

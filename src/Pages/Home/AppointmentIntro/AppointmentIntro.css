@@ -1,0 +1,22 @@
+
+.doctor-img img{
+    width:630px;
+    height:580px;
+    position:relative;
+    top:-110px;
+   
+    
+}
+.appointmentIntro-container{
+    height:470px;
+    background-image: url('../../../assets/images/appointment.png');
+    background-size: cover;
+}
+
+.button{
+    width:120px;
+    height:50px;
+    background-image: linear-gradient(120deg, #19D3AE 0%, #0FCFEC 100%);
+    border-radius: 8px;
+    color:#FFFFFF;
+}
