@@ -15,7 +15,7 @@ const Testmonial = () => {
                             <img className='w-16 h-16 ' src={people} alt="patient" />
                         </div>
                         <div>
-                            <h3>Alex</h3>
+                            <h3 className='font-bold text-teal-300'>Alex</h3>
                             <p>USA</p>
                         </div>
                     </div>
@@ -27,7 +27,7 @@ const Testmonial = () => {
                             <img className='w-16 h-16 ' src={people} alt="patient" />
                         </div>
                         <div>
-                            <h3>Alex</h3>
+                            <h3 className='font-bold text-teal-300'>Alex</h3>
                             <p>USA</p>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ const Testmonial = () => {
                             <img className='w-16 h-16 ' src={people} alt="patient" />
                         </div>
                         <div>
-                            <h3>Alex</h3>
+                            <h3 className='font-bold text-teal-300'>Alex</h3>
                             <p>USA</p>
                         </div>
                     </div>
