@@ -4,7 +4,7 @@ import {BsClockHistory, BsFillGeoAltFill,BsTelephoneFill} from 'react-icons/bs';
 
 const Tag = () => {
     return (
-        <div className='card-container grid md:grid-cols-3 relative mt-80'>
+        <div className='card-container grid md:grid-cols-3 relative mt-80 ml-8'>
             <div className="card card-main lg:card-side bg-base-100 shadow-xl">
                 <figure><BsClockHistory className='tag-icons'/></figure>
                 <div className="card-body">
