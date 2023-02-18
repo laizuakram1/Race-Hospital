@@ -8,7 +8,7 @@ const Banner = () => {
 
     return (
         <div>
-            <div className="carousel w-full h-96">
+            <div className="carousel w-full h-96 absolute">
                 <div id="slide1" className="carousel-item relative w-full">
                     {/* slide content */}
                     <div className="hero h-96" style={{ background: `url('${slide}') no-repeat center center` }}>
