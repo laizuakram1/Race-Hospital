@@ -2,6 +2,7 @@ import React from 'react';
 import './Services.css';
 import gynaecology from '../../../assets/images/fluoride.png';
 import treatment from '../../../assets/images/treatment.png';
+import {BiDonateBlood} from 'react-icons/bi';
 
 const Services = () => {
     return (
@@ -59,13 +60,13 @@ const Services = () => {
                     </div>
                 </div>
                 <div className='transfusions'>
-                    <div className="card lg:card-side bg-base-100 shadow-xl">
+                    <div className="card lg:card-side bg-base-100 shadow-xl p-10 grid md:grid-cols-2">
                         <figure><img className='transfusion-img' src={treatment} alt="Album" /></figure>
                         <div className="card-body">
-                            <h2 className="card-title">Blood Bank</h2>
-                            <p>We helps people to give human pure blood for safe life.</p>
+                            <h2 className="text-3xl font-bold"><span className='text-red-400'><BiDonateBlood className='inline mr-3'/>Blood</span><span className='text-green-400'>Bank</span></h2>
+                            <p>We helps people to give human pure blood for safe life. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, ducimus fugiat doloribus eos quaerat quas impedit vel quidem temporibus dign issimos?</p>
                             <div className="card-actions justify-start">
-                                <button className="btn btn-primary">Listen</button>
+                                <button className="btn btn-success">Donate Blood</button>
                             </div>
                         </div>
                     </div>
