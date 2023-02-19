@@ -5,6 +5,7 @@ import {FaFacebook, FaLinkedin} from 'react-icons/fa';
 import {BsGithub} from 'react-icons/bs';
 
 const Footer = () => {
+    
     return (
         <div>
              <footer className="footer p-10 text-base-content">
@@ -29,10 +30,11 @@ const Footer = () => {
                         <a className="link link-hover">Cookie policy</a>
                     </div>
                 </footer>
-                <footer className="footer px-10 py-4 text-base-content cursor-pointer bg-emerald-300">
+                <footer className="footer px-10 py-4 text-base-content cursor-pointer bg-teal-300">
                     <div className="items-center grid-flow-col">
                         <GiHospitalCross  className='text-3xl '/>
-                        <p>Race Hospital<br />Provide safe Health service since 2018</p>
+                        <p>Race Hospital<br />Provide safe Health service since 2018 <br />&copy;{new Date().getFullYear()}</p>
+                        
                     </div>
                     <div className="md:place-self-center md:justify-self-end">
                         <div className="grid grid-flow-col gap-4">
