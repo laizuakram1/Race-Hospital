@@ -28,7 +28,13 @@ const [treatment, setTreatment] = useState(null)
             }
             
         </div>
-        <BookingModal treatment = {treatment}></BookingModal>
+        {
+            treatment &&
+            <BookingModal 
+            treatment = {treatment}
+            selectedDate = {selectedDate}
+            ></BookingModal>
+        }
         </div>
     );
 };
