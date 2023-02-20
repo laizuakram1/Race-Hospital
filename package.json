@@ -12,6 +12,7 @@
     "react-animated-slider": "^1.1.4",
     "react-day-picker": "^8.6.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.1",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",

@@ -33,6 +33,7 @@ const [treatment, setTreatment] = useState(null)
             <BookingModal 
             treatment = {treatment}
             selectedDate = {selectedDate}
+            setTreatment = {setTreatment}
             ></BookingModal>
         }
         </div>
