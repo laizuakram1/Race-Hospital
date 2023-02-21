@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import {SiGnuprivacyguard} from 'react-icons/si';
 import {BsFacebook} from 'react-icons/bs';
 import {FcGoogle} from 'react-icons/fc';
 import { useForm } from "react-hook-form";
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
-    const handleLogIn = data => console.log(data);
+    const {userLogin} = useContext(AuthContext);
+    const handleLogIn = data =>{
+        userLogin(data.email, data.password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.log(error));
+    }
 
 
     return (

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Navbar = () => {
+
+        const {user} = useContext(AuthContext);
+        console.log(user)
+        
     return (
         <div id='menubar'>
             <div className="navbar bg-base-100">
@@ -16,12 +21,12 @@ const Navbar = () => {
                         <Link to='/appointment'>Appointment</Link>
                         <Link to='#'>Blood Bank</Link>
                         <Link to='#'>Contact Us</Link>
-                        <Link to='/login'>Login</Link>
+                        {/* {user?.uid ? <Link to='/signup'>SignOut</Link> : <Link to='/login'>Login</Link>} */}
                     </div>
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <img src={user?.photoURL} />
                             </div>
                         </label>
                         <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -32,7 +37,7 @@ const Navbar = () => {
                                 </a>
                             </li>
                             <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
+                            {user?.uid ? <li><a>Logout</a></li> : <li><a>Login</a></li>}
                         </ul>
                     </div>
                 </div>
