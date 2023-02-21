@@ -13,11 +13,10 @@ const Navbar = () => {
 
                     <div className="menu-items">
                         <Link className='active-item' to='/'>Home</Link>
-                        <Link to='#'>About</Link>
                         <Link to='/appointment'>Appointment</Link>
                         <Link to='#'>Blood Bank</Link>
                         <Link to='#'>Contact Us</Link>
-                        <Link to='#'>Login</Link>
+                        <Link to='/login'>Login</Link>
                     </div>
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

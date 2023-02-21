@@ -3,16 +3,21 @@ import { Link } from 'react-router-dom';
 import {SiGnuprivacyguard} from 'react-icons/si';
 import {BsFacebook} from 'react-icons/bs';
 import {FcGoogle} from 'react-icons/fc';
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+    const { register, handleSubmit } = useForm();
+    const handleLogIn = data => console.log(data);
+
+
     return (
         <div className='form-container'>
-            <form>
+            <form onSubmit={handleSubmit(handleLogIn)}>
             <h3 className='text-2xl text-accent font-bold text-center'>Login</h3>
             <SiGnuprivacyguard className='text-5xl text-center w-full my-5'/>
             {/* <input type="text" placeholder="Your Name" className="input input-bordered input-md w-full no-outline" /> */}
-            <input type="email" placeholder="E-mail" className="input input-bordered input-md w-full" />
-            <input type="password" placeholder="password" className="input input-bordered input-md w-full" />
+            <input {...register('email')} type="email" placeholder="E-mail" className="input input-bordered input-md w-full" />
+            <input {...register('password')} type="password" placeholder="password" className="input input-bordered input-md w-full" />
             
             
             <div className='flex justify-between mr-10'>
@@ -23,9 +28,9 @@ const Login = () => {
             
 
             <div className="divider">OR</div>
-            <div className='flex justify-center'>
-                <BsFacebook className='text-3xl mr-8'/>
-                <FcGoogle className='text-3xl'/>
+            <div className='flex justify-center cursor-pointer'>
+                <BsFacebook className='text-3xl hover:text-white mr-6'/>
+                <FcGoogle className='text-3xl hover:text-white'/>
             </div>
             </form>
             
