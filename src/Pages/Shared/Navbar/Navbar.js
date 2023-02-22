@@ -5,8 +5,14 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Navbar = () => {
 
-        const {user} = useContext(AuthContext);
+        const {user,LogOut} = useContext(AuthContext);
         console.log(user)
+
+        const hadleLogOut = ()=>{
+            LogOut()
+            .then(() =>{})
+            .catch((err) => console.log(err))
+        }
         
     return (
         <div id='menubar'>
@@ -22,8 +28,9 @@ const Navbar = () => {
                         <Link to='#'>Blood Bank</Link>
                         <Link to='#'>Contact Us</Link>
                         {/* {user?.uid ? <Link to='/signup'>SignOut</Link> : <Link to='/login'>Login</Link>} */}
-                    </div>
-                    <div className="dropdown dropdown-end">
+                        {user?.uid ? <>
+                        <Link to='#'>Dashboard</Link>
+                        <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img src={user?.photoURL} />
@@ -37,9 +44,12 @@ const Navbar = () => {
                                 </a>
                             </li>
                             <li><a>Settings</a></li>
-                            {user?.uid ? <li><a>Logout</a></li> : <li><a>Login</a></li>}
+                            {user?.uid ? <li><button onClick={hadleLogOut}>Logout</button></li> : <li><a>Login</a></li>}
                         </ul>
+                    </div></> : <Link className='btn btn-dark' to='/login'>Login</Link>
+                    }
                     </div>
+                    
                 </div>
             </div>
         </div>

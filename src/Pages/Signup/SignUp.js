@@ -3,19 +3,35 @@ import '../Signup/SignUp.css';
 import { SiGnuprivacyguard } from 'react-icons/si';
 import { BsFacebook } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const SignUp = () => {
     const { register,formState: { errors }, handleSubmit } = useForm();
-    const {createUser} = useContext(AuthContext);
+    const {createUser,updateUser} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathName || '/'
+
     const handleSignUp = data => {
         console.log(data);
         createUser(data.email, data.password)
         .then(result => {
+            updateUser('')
             const user = result.user;
             console.log(user);
+            const userInfo = {
+                displayName:data.name
+            }
+
+            updateUser(userInfo)
+            .then(() =>{})
+            .catch((err) => console.log(err));
+           
+            navigate(from, {replace:true});
+            
         })
         .catch(error => console.log(error))
 

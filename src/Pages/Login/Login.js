@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {SiGnuprivacyguard} from 'react-icons/si';
 import {BsFacebook} from 'react-icons/bs';
 import {FcGoogle} from 'react-icons/fc';
@@ -9,11 +9,19 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 const Login = () => {
     const { register, handleSubmit } = useForm();
     const {userLogin} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathName || '/';
+
+
+
     const handleLogIn = data =>{
         userLogin(data.email, data.password)
         .then(result =>{
             const user = result.user;
             console.log(user);
+            navigate(from, {replace:true});
         })
         .catch(error => console.log(error));
     }
