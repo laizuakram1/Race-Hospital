@@ -46,7 +46,7 @@ const Navbar = () => {
                             <li><a>Settings</a></li>
                             {user?.uid ? <li><button onClick={hadleLogOut}>Logout</button></li> : <li><a>Login</a></li>}
                         </ul>
-                    </div></> : <Link className='btn btn-dark' to='/login'>Login</Link>
+                    </div></> : <Link className="link link-success" to='/login'>Login</Link>
                     }
                     </div>
                     

@@ -1,19 +1,26 @@
+import { useQuery } from '@tanstack/react-query';
 import { format } from 'date-fns';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AppointmentOptions from '../AppointmentOpsions/AppointmentOptions';
 import BookingModal from '../BookingModal/BookingModal';
 
 
 const AvailableAppointment = ({selectedDate}) => {
-const doctors = [
-    {name: 'Dr. Illen', specialist:"Gynaecology", seats:10, day:'sunday', time:'10am - 04pm'},
-    {name: 'Dr. Iqbal Ahmed', specialist:"Medicine", seats:10, day:'sunday', time:'10am - 04pm'},
-    {name: 'Dr. Mostafijur', specialist:"Diabetologist", seats:10, day:'sunday',time:'10am - 04pm'},
-    {name: 'Dr. Jabir', specialist:"Dermatology", seats:10, day:'sunday',time:'10am - 04pm'},
-    {name: 'Dr. Arafat', specialist:"Cardiology", seats:10, day:'sunday',time:'10am - 04pm'},
-    {name: 'Dr. Limu', specialist:"Orthopedics", seats:10, day:'sunday',time:'10am - 04pm'}
-]
+
+// const [doctors, setDoctors] = useState([])
 const [treatment, setTreatment] = useState(null)
+
+const {data:doctors = []} = useQuery({
+    key:['doctors'],
+    queryFn:() => fetch('http://localhost:5000/doctors')
+    .then(res => res.json())
+})
+
+    // useEffect(() =>{
+    //     fetch('http://localhost:5000/doctors')
+    //     .then(res => res.json())
+    //     .then(data => setDoctors(data));
+    // },[])
 
     return (
         <div>

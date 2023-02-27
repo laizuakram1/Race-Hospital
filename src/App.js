@@ -6,6 +6,9 @@ import Appointment from './Pages/Appointment/Appointment/Appointment';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/Signup/SignUp';
+import { Toaster } from 'react-hot-toast';
+// import router from './Routes/Routes/Routes';
+import { RouterProvider } from 'react-router-dom';
 
 
 function App() {
@@ -18,6 +21,17 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>
+      <Toaster 
+      toastOptions={{
+        className: '',
+        style: {
+          backgroundColor:'orange',
+          padding: '16px',
+          color: 'green',
+        },
+      }}
+      />
+      
     </div>
   );
 }

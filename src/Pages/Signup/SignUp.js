@@ -6,10 +6,11 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Contexts/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const SignUp = () => {
-    const { register,formState: { errors }, handleSubmit } = useForm();
-    const {createUser,updateUser} = useContext(AuthContext);
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { createUser, updateUser, verifyEmail } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -18,26 +19,43 @@ const SignUp = () => {
     const handleSignUp = data => {
         console.log(data);
         createUser(data.email, data.password)
-        .then(result => {
-            updateUser('')
-            const user = result.user;
-            console.log(user);
-            const userInfo = {
-                displayName:data.name
-            }
+            .then(result => {
+                updateUser('')
+                const user = result.user;
+                console.log(user);
 
-            updateUser(userInfo)
-            .then(() =>{})
-            .catch((err) => console.log(err));
-           
-            navigate(from, {replace:true});
-            
-        })
-        .catch(error => console.log(error))
 
-        
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => {
+                        verifyEmail()
+                            .then(() => { })
+                            .catch((err) => console.log(err));
+                    })
+                    .catch((err) => console.log(err));
+
+
+                toast('signup successfully', {
+                    duration: 5000,
+                    position: 'bottom-right',
+
+                    // Custom Icon
+                    icon: '👏',
+
+                });
+
+                navigate(from, { replace: true });
+
+            })
+
+            .catch(error => console.log(error))
+
+
     }
-    
+
+
     return (
         <div className='form-container'>
             <form onSubmit={handleSubmit(handleSignUp)}>

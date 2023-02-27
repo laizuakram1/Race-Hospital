@@ -9,8 +9,7 @@ const BookingModal = ({ treatment,setTreatment, selectedDate }) => {
         event.preventDefault();
 
 
-
-
+        
         setTreatment(null)
         
         
