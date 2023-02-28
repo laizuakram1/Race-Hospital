@@ -13,11 +13,11 @@ const AuthProvider = ({children}) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const verifyEmail = ()=>{
-        return sendEmailVerification(user);
+        return sendEmailVerification(auth?.currentUser);
     }
 
     const updateUser = (userInfo) =>{
-        return updateProfile(user, userInfo)
+        return updateProfile(auth?.currentUser, userInfo)
     }
 
     const userLogin = (email, password) =>{

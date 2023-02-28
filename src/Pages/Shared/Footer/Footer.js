@@ -11,17 +11,17 @@ const Footer = () => {
              <footer className="footer p-10 text-base-content">
                     <div>
                         <span className="footer-title">Services</span>
-                        <a className="link link-hover">Branding</a>
-                        <a className="link link-hover">Design</a>
-                        <a className="link link-hover">Marketing</a>
-                        <a className="link link-hover">Advertisement</a>
+                        <a className="link link-hover">Health</a>
+                        <a className="link link-hover">Insurance</a>
+                        <a className="link link-hover">Financial</a>
+                        <a className="link link-hover">Social Development</a>
                     </div>
                     <div>
                         <span className="footer-title">Company</span>
-                        <a className="link link-hover">About us</a>
-                        <a className="link link-hover">Contact</a>
-                        <a className="link link-hover">Jobs</a>
-                        <a className="link link-hover">Press kit</a>
+                        <a className="link link-hover">Race Ltd.</a>
+                        <a className="link link-hover">Race Hospital</a>
+                        <a className="link link-hover">Race College</a>
+                        <a className="link link-hover">Race Autism School</a>
                     </div>
                     <div>
                         <span className="footer-title">Legal</span>
@@ -32,7 +32,7 @@ const Footer = () => {
                 </footer>
                 <footer className="footer px-10 py-4 text-base-content cursor-pointer bg-teal-300">
                     <div className="items-center grid-flow-col">
-                        <GiHospitalCross  className='text-3xl '/>
+                        <GiHospitalCross  className='text-6xl '/>
                         <p>Race Hospital<br />Provide safe Health service since 2018 <br />&copy;{new Date().getFullYear()}</p>
                         
                     </div>

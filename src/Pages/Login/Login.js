@@ -8,7 +8,7 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
 
 const Login = () => {
-    const { register, handleSubmit } = useForm();
+    const { register,formState: { errors }, handleSubmit } = useForm();
     const { userLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
@@ -41,9 +41,9 @@ const Login = () => {
                 <h3 className='text-2xl text-accent font-bold text-center'>Login</h3>
                 <SiGnuprivacyguard className='text-5xl text-center w-full my-5' />
                 {/* <input type="text" placeholder="Your Name" className="input input-bordered input-md w-full no-outline" /> */}
-                <input {...register('email')} type="email" placeholder="E-mail" className="input input-bordered input-md w-full" />
-                <input {...register('password')} type="password" placeholder="password" className="input input-bordered input-md w-full" />
-
+                <input {...register('email',{requred: 'provide valid email'})} type="email" placeholder="E-mail" className="input input-bordered input-md w-full" />
+                <input {...register('password', {requred: 'provide valid password'})} type="password" placeholder="password" className="input input-bordered input-md w-full" />
+                
 
 
                 <div className='flex justify-between mr-10'>
