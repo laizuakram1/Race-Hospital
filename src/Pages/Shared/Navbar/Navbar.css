@@ -20,3 +20,10 @@
     
     
 }
+
+
+@media (max-width: 480px) {
+    .menu-items{
+        display:none;
+    }
+  }
