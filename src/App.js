@@ -12,6 +12,8 @@ import { RouterProvider } from 'react-router-dom';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Profile from './Pages/Dashboard/Profile/Profile';
 import MyAppointments from './Pages/Dashboard/MyAppointments/MyAppointments';
+import Prescription from './Pages/Dashboard/Prescription/Prescription';
+import Report from './Pages/Dashboard/Report/Report';
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
         <Route path="dashboard" element={<Dashboard></Dashboard>} >
           <Route index element={<MyAppointments></MyAppointments>}></Route>
           <Route path="profile" element={<Profile></Profile>}></Route>
+          <Route path="prescription" element={<Prescription></Prescription>}></Route>
+          <Route path="report" element={<Report></Report>}></Route>
         </Route>
 
       </Routes>
