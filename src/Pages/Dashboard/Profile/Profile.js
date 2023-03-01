@@ -14,7 +14,33 @@ const Profile = () => {
                         <p>laizuakram98@gmail.com</p>
                         <p>Blood Group: "O"+ve</p>
                         <p>Total Blood Donate: 4</p>
-                        <p>Last Blood Donate: 22/10/22</p>
+                        <button className='border border-cyan-500 text-xl p-2 rounded-lg'>Last Donate</button>
+                        <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
+                            <div className="flex flex-col">
+                                <span className="countdown font-mono text-5xl">
+                                    <span style={{ "--value": 15 }}></span>
+                                </span>
+                                days
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="countdown font-mono text-5xl">
+                                    <span style={{ "--value": 10 }}></span>
+                                </span>
+                                hours
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="countdown font-mono text-5xl">
+                                    <span style={{ "--value": 24 }}></span>
+                                </span>
+                                min
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="countdown font-mono text-5xl">
+                                    <span style={{ "--value": 48 }}></span>
+                                </span>
+                                sec
+                            </div>
+                        </div>
 
                         <div className="card-actions">
                             <button className="btn btn-accent">UPDATE PROFILE</button>
