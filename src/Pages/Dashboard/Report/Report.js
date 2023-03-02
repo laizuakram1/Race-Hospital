@@ -8,7 +8,6 @@ const Report = () => {
     const { auth } = useContext(AuthContext)
     const email = auth?.currentUser?.email
     const [reports, setReports] = useState([])
-    console.log(reports)
     const imageHostKey = process.env.REACT_APP_imagebb_host_key;
     const [refetch, setRefetch] = useState({})
 

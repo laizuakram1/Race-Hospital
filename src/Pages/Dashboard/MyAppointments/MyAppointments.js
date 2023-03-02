@@ -1,17 +1,18 @@
-import { useQuery } from '@tanstack/react-query';
+
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const MyAppointments = () => {
     const {auth} = useContext(AuthContext);
     const [appointments, setAppointments] = useState([])
+    console.log(appointments)
+    const email = auth?.currentUser?.email
 
     useEffect( ()=> {
-        fetch(`http://localhost:5000/bookings`)
+        fetch(`http://localhost:5000/bookings?email=${email}`)
         .then(res => res.json())
         .then(data => setAppointments(data))
     },[])
-    console.log(appointments)
     
     return (
         <div>
@@ -32,7 +33,9 @@ const MyAppointments = () => {
                     </thead>
                     <tbody>
                         {
-                            appointments.map((appointment, i) => <tr className='hover'>
+                            appointments.map((appointment, i) => <tr className='hover'
+                            key={i}
+                            >
                             <th>{i}</th>
                             <td>{appointment.name}</td>
                             <td>{appointment.specialist}</td>
