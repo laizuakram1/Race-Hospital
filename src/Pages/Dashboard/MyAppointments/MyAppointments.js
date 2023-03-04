@@ -1,11 +1,11 @@
 
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const MyAppointments = () => {
     const {auth} = useContext(AuthContext);
     const [appointments, setAppointments] = useState([])
-    console.log(appointments)
     const email = auth?.currentUser?.email
 
     useEffect( ()=> {
@@ -42,7 +42,7 @@ const MyAppointments = () => {
                             <td>{appointment.date}</td>
                             <td>{appointment.day}</td>
                             <td>{appointment.time}</td>
-                            <td>pending</td>
+                            <td><Link to={`/dashboard/payment/${appointment._id}`}><button className="btn btn-xs btn-success">Pay</button></Link></td>
                             
                         </tr> )
                         }

@@ -14,6 +14,7 @@ import Profile from './Pages/Dashboard/Profile/Profile';
 import MyAppointments from './Pages/Dashboard/MyAppointments/MyAppointments';
 import Prescription from './Pages/Dashboard/Prescription/Prescription';
 import Report from './Pages/Dashboard/Report/Report';
+import Payment from './Pages/Dashboard/Payment/Payment';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="profile" element={<Profile></Profile>}></Route>
           <Route path="prescription" element={<Prescription></Prescription>}></Route>
           <Route path="report" element={<Report></Report>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
         </Route>
 
       </Routes>

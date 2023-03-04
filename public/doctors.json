@@ -1,0 +1,57 @@
+[
+    {
+    
+        "name":"Dr. Limu",
+        "specialist":"Orthopedics",
+        "seats":10,
+        "day":"Friday",
+        "time":"10am - 06pm",
+        "price":200
+        },
+    {
+    
+        "name":"Dr. Iqbal Ahmed",
+        "specialist":"Medicine",
+        "seats":10,
+        "day":"Everyday",
+        "time":"02pm - 08pm",
+        "price":120
+        },
+    {
+    
+        "name":"Dr. Illen",
+        "specialist":"Gynaecology",
+        "seats":10,
+        "day":"Sunday",
+        "time":"10am - 04pm",
+        "price":100
+        },
+    {
+    
+        "name":"Dr. Jabir",
+        "specialist":"Dermatology",
+        "seats":10,
+        "day":"Everyday",
+        "time":"10am - 08pm",
+        "price":120
+        },
+    {
+    
+        "name":"Dr. Arafat",
+        "specialist":"Cardiology",
+        "seats":10,
+        "day":"Tuesday",
+        "time":"10am - 04pm",
+        "price":200
+        },
+    {
+    
+        "name":"Dr. Mostafijur",
+        "specialist":"Diabetologist",
+        "seats":10,
+        "day":"Everyday",
+        "time":"02am - 08pm",
+        "price":150
+        }
+
+]

@@ -5,7 +5,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
 
 const BookingModal = ({ treatment,setTreatment, selectedDate }) => {
-    const { name, specialist, time, day } = treatment;
+    const { name, specialist, time, day, price } = treatment;
     const date = format(selectedDate, 'PP');
     const {user} = useContext(AuthContext);
     const { register, handleSubmit } = useForm();
@@ -19,7 +19,9 @@ const BookingModal = ({ treatment,setTreatment, selectedDate }) => {
             time,
             day,
             email:data.email,
+            price,
             phone:data.phone
+            
         }
         
         fetch('http://localhost:5000/bookings',{
@@ -66,7 +68,7 @@ const BookingModal = ({ treatment,setTreatment, selectedDate }) => {
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <h3 className='text-xl text-accent font-bold mb-5'>{specialist}</h3>
+                    <h3 className='text-xl text-accent font-bold mb-5'>{specialist}: ${price}</h3>
                     <form onSubmit={handleSubmit(handleBooking)}>
                     <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                         <div className='grid grid-cols-2 gap-5'>

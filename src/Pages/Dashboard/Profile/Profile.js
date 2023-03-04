@@ -38,8 +38,8 @@ const Profile = () => {
             .then((data) => {
                 const userInfo = {
                     image: data.data.image.url,
-                    name: name,
-                    email: email,
+                    // name: name,
+                    // email: email,
                     birthdate: birthdate,
                     bloodgroup: bloodgroup,
                     totaldonate: totaldonate,
@@ -82,23 +82,24 @@ const Profile = () => {
         <div>
             <h3 className='text-3xl bold text-success m-3 text-center'>Your Profile</h3>
             <div className='w-full flex justify-center'>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-1/2 bg-base-100 shadow-xl">
                     <figure className="px-5 pt-5">
                         <img src={profiles?.image} alt="user" className="rounded-xl h-48 w-48" />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">{profiles.name}</h2>
-                        <p>{profiles.email}</p>
-                        <button className="btn gap-2">
+                        <h2 className="card-title">{user?.displayName}</h2>
+                        <p>{user?.email}</p>
+                        <p>Date of Birth: <span className="badge badge-secondary badge-outline">{profiles.birthdate}</span></p>
+                        <button className="btn btn-outline gap-2">
                             Blood Group:
                             <div className="badge badge-secondary">{profiles.bloodgroup}</div>
                         </button>
-                        <button className="btn gap-2">
+                        <button className="btn btn-outline gap-2">
                             Total Blood Donate
                             <div className="badge badge-secondary">{profiles.totaldonate}</div>
                         </button>
-                        <button className="btn gap-2">
-                            Last Blood Donate
+                        <button className="btn btn-outline gap-2">
+                            Last Donate
                             <div className="badge badge-secondary">{profiles.lastdonate}</div>
                         </button>
 
@@ -114,8 +115,8 @@ const Profile = () => {
                                 <div className="modal-box relative">
                                     <label htmlFor="profileModals" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                                     <form onSubmit={handleSubmit(onSubmit)}>
-                                        <input {...register("name", { required: 'type your name' })} type="text" placeholder="Your name" className="mb-3 input w-full max-w-xs border-cyan-400" />
-                                        <input {...register("email", { required: 'type your valid email' })} type="email" placeholder="E-mail" className="mb-3 input w-full max-w-xs border-cyan-400" />
+                                        {/* <input {...register("name", { required: 'type your name' })} type="text" placeholder="Your name" className="mb-3 input w-full max-w-xs border-cyan-400" />
+                                        <input {...register("email", { required: 'type your valid email' })} type="email" placeholder="E-mail" className="mb-3 input w-full max-w-xs border-cyan-400" /> */}
                                         <select {...register("bloodgroup")} placeholder='select blood group' className="input w-full max-w-xs py-2 mb-3 border-cyan-400">
                                             <option defaultValue="none">Select Blood Group</option>
                                             <option value="A +ve">A +ve</option>
