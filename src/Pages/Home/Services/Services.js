@@ -21,7 +21,7 @@ const Services = () => {
                                 <p>We Delivered your all kind of Pathological Report timely.Collect sample safely and delivery your Report after 1 hour.We know your time value.
                                 </p>
                                 <div className="card-actions">
-                                    <button className="btn btn-primary">Details</button>
+                                <button className="button uppercase">Details</button>
                                 </div>
                             </div>
                         </div>
@@ -33,11 +33,11 @@ const Services = () => {
                                 <img src={gynaecology} alt="Shoes" className="rounded-xl" />
                             </figure>
                             <div className="card-body items-center text-center">
-                                <h2 className="card-title">Pathology</h2>
+                                <h2 className="card-title">3D Ultrasonogram</h2>
                                 <p>We Delivered your all kind of Pathological Report timely.Collect sample safely and delivery your Report after 1 hour.We know your time value.
                                 </p>
                                 <div className="card-actions">
-                                    <button className="btn btn-primary">Details</button>
+                                <button className="button uppercase">Details</button>
                                 </div>
                             </div>
                         </div>
@@ -49,11 +49,11 @@ const Services = () => {
                                 <img src={gynaecology} alt="Shoes" className="rounded-xl" />
                             </figure>
                             <div className="card-body items-center text-center">
-                                <h2 className="card-title">Pathology</h2>
+                                <h2 className="card-title">Digital X-ray</h2>
                                 <p>We Delivered your all kind of Pathological Report timely.Collect sample safely and delivery your Report after 1 hour.We know your time value.
                                 </p>
                                 <div className="card-actions">
-                                    <button className="btn btn-primary">Details</button>
+                                <button className="button uppercase">Details</button>
                                 </div>
                             </div>
                         </div>
