@@ -20,3 +20,10 @@
     border-radius: 8px;
     color:#FFFFFF;
 }
+
+@media only screen and (max-width: 600px) {
+    .appointmentIntro-title{
+        display:none;
+    
+    }
+}

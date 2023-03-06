@@ -4,7 +4,9 @@ import ultrasonogram from '../../../assets/images/ultra3.jpg'
 import pathology from '../../../assets/images/pathology.webp'
 import xray from '../../../assets/images/xray.jpg'
 import treatment from '../../../assets/images/treatment.png';
+import donor from '../../../assets/images/blood-bank/donor.webp'
 import {BiDonateBlood} from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
     return (
@@ -23,7 +25,7 @@ const Services = () => {
                                 <p>We Delivered your all kind of Pathological Report timely.Collect sample safely and delivery your Report after 1 hour.We know your time value.
                                 </p>
                                 <div className="card-actions">
-                                <button className="button uppercase">Details</button>
+                                <Link to='/appointment'> <button className="button uppercase">Details</button></Link>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +41,7 @@ const Services = () => {
                                 <p>We Delivered your all kind of Pathological Report timely.Collect sample safely and delivery your Report after 1 hour.We know your time value.
                                 </p>
                                 <div className="card-actions">
-                                <button className="button uppercase">Details</button>
+                                <Link to='/appointment'> <button className="button uppercase">Details</button></Link>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +57,7 @@ const Services = () => {
                                 <p>We Delivered your all kind of Pathological Report timely.Collect sample safely and delivery your Report after 1 hour.We know your time value.
                                 </p>
                                 <div className="card-actions">
-                                <button className="button uppercase">Details</button>
+                                <Link to='/appointment'> <button className="button uppercase">Details</button></Link>
                                 </div>
                             </div>
                         </div>
@@ -63,12 +65,12 @@ const Services = () => {
                 </div>
                 <div className='transfusions mt-10'>
                     <div className="card lg:card-side bg-base-100 p-10 grid md:grid-cols-2">
-                        <figure><img className='transfusion-img' src={treatment} alt="treatment" /></figure>
+                        <figure><img className='transfusion-img' src={donor} alt="treatment" /></figure>
                         <div className="card-body">
                             <h2 className="text-3xl font-bold"><span className='text-red-400'><BiDonateBlood className='inline mr-3'/>Blood</span><span className='text-green-400'>Bank</span></h2>
                             <p>We helps people to give human pure blood for safe life. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, ducimus fugiat doloribus eos quaerat quas impedit vel quidem temporibus dign issimos?</p>
                             <div className="card-actions justify-start">
-                                <button className="button">Donate Blood</button>
+                            <Link to='/BloodBank'><button className='button'>Donoate Now</button></Link>
                             </div>
                         </div>
                     </div>

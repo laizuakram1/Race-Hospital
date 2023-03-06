@@ -21,3 +21,10 @@
     background-color: #3A4256;
     color:#FFFFFF;
 }
+
+@media only screen and (max-width: 600px) {
+    .card-container{
+        margin-top:395px;
+    
+    }
+}

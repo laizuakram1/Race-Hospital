@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { SiGnuprivacyguard } from 'react-icons/si';
-import { BsFacebook } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
+import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
+
+const provider = new GoogleAuthProvider();
 
 const Login = () => {
-    const { register,formState: { errors }, handleSubmit } = useForm();
-    const { userLogin } = useContext(AuthContext);
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { userLogin, auth } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -28,10 +30,22 @@ const Login = () => {
                     // Custom Icon
                     icon: '👏',
 
-                  });
+                });
                 navigate(from, { replace: true });
             })
             .catch(error => console.log(error));
+    }
+
+    const googleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const googleUser = result.user;
+                navigate(from, { replace: true });
+                console.log(googleUser)
+            })
+            .catch((error) => {
+                console.log(error.message)
+            })
     }
 
 
@@ -41,9 +55,9 @@ const Login = () => {
                 <h3 className='text-2xl text-accent font-bold text-center'>Login</h3>
                 <SiGnuprivacyguard className='text-5xl text-center w-full my-5' />
                 {/* <input type="text" placeholder="Your Name" className="input input-bordered input-md w-full no-outline" /> */}
-                <input {...register('email',{requred: 'provide valid email'})} type="email" placeholder="E-mail" className="input input-bordered input-md w-full" />
-                <input {...register('password', {requred: 'provide valid password'})} type="password" placeholder="password" className="input input-bordered input-md w-full" />
-                
+                <input {...register('email', { requred: 'provide valid email' })} type="email" placeholder="E-mail" className="input input-bordered input-md w-full" />
+                <input {...register('password', { requred: 'provide valid password' })} type="password" placeholder="password" className="input input-bordered input-md w-full" />
+
 
 
                 <div className='flex justify-between mr-10'>
@@ -55,8 +69,7 @@ const Login = () => {
 
                 <div className="divider">OR</div>
                 <div className='flex justify-center cursor-pointer'>
-                    <BsFacebook className='text-3xl hover:text-white mr-6' />
-                    <FcGoogle className='text-3xl hover:text-white' />
+                    <button onClick={googleSignIn} className='btn w-full'><FcGoogle className='text-2xl mr-5' />Google SingIn</button>
                 </div>
             </form>
 

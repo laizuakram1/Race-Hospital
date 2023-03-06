@@ -16,7 +16,7 @@ const Navbar = () => {
     return (
         <div id='menubar'>
             <div className="navbar bg-base-100">
-                <label tabIndex={1} htmlFor="menu-items" className="btn btn-ghost btn-circle lg:hidden">
+                <label tabIndex={0} htmlFor="menu-items" className="btn btn-ghost btn-circle lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                 </label>
                 <div className="flex-1">
@@ -24,7 +24,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex-none gap-2">
 
-                    <div id='menu' className="menu-items">
+                    <div tabIndex={0} className="menu-items">
                         <Link className='active-item' to='/'>Home</Link>
                         <Link to='/appointment'>Appointment</Link>
                         <Link to='/bloodBank'>Blood Bank</Link>
@@ -58,11 +58,13 @@ const Navbar = () => {
                     </div>
 
                 </div>
-                <label tabIndex={2} htmlFor="dashboard-drawer" className="btn btn-ghost btn-circle lg:hidden">
+                <label tabIndex={1} htmlFor="dashboard-drawer" className="btn btn-ghost btn-circle lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                 </label>
             </div>
         </div>
+
+        
     );
 };
 

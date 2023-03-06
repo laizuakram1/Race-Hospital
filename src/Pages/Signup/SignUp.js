@@ -1,17 +1,20 @@
 import React, { useContext, useState } from 'react';
 import '../Signup/SignUp.css';
 import { SiGnuprivacyguard } from 'react-icons/si';
-import { BsFacebook } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
+import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
+
+const provider = new GoogleAuthProvider();
+
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const {sigUpError, setSignUpError} = useState('')
-    const { createUser, updateUser, verifyEmail } = useContext(AuthContext);
+    const { createUser, updateUser, verifyEmail, auth } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -62,6 +65,20 @@ const SignUp = () => {
 
     }
 
+    const googleSignIn = () =>{
+        signInWithPopup(auth, provider)
+        .then((result) =>{
+            const googleUser = result.user;
+            navigate(from, { replace: true });
+            console.log(googleUser)
+        })
+        .catch((error) =>{
+            console.log(error.message)
+        })
+    }
+
+   
+
 
     return (
         <div className='form-container'>
@@ -85,8 +102,7 @@ const SignUp = () => {
 
                 <div className="divider">OR</div>
                 <div className='flex justify-center'>
-                    <BsFacebook className='text-3xl mr-8' />
-                    <FcGoogle className='text-3xl' />
+                    <button onClick={googleSignIn} className='btn w-full'><FcGoogle className='text-2xl mr-5'/>Google SignIn</button>
                 </div>
             </form>
 

@@ -23,8 +23,8 @@ const Dashboard = () => {
 
                 </div>
                 <div className="drawer-side">
-                    <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 bg-current rounded">
+                    <label  htmlFor="dashboard-drawer" className="drawer-overlay"></label>
+                    <ul tabIndex={1} className="menu p-4 w-80 bg-current rounded">
                         {/* <!-- Sidebar content here --> */}
                         <li className='text-white'><Link to='/dashboard'><BsFillCalendar2CheckFill className='text-2xl text-cyan-400'/>My Appointments</Link></li>
                         <li className='text-white'><Link to='/dashboard/profile'><ImProfile className='text-2xl text-cyan-400'/>Profile</Link></li>
