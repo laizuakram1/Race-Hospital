@@ -31,7 +31,7 @@ const Prescription = () => {
                     email,
                     image: data.data.url
                 }
-                fetch(`http://localhost:5000/prescription`, {
+                fetch(`https://race-hospital-server.vercel.app/prescription`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'
@@ -53,7 +53,7 @@ const Prescription = () => {
     }
 
     useEffect(() => {
-        const url = `http://localhost:5000/prescription?email=${email}`
+        const url = `https://race-hospital-server.vercel.app/prescription?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setPrescription(data))

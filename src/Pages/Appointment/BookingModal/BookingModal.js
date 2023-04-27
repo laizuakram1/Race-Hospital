@@ -24,7 +24,7 @@ const BookingModal = ({ treatment,setTreatment, selectedDate }) => {
             
         }
         
-        fetch('http://localhost:5000/bookings',{
+        fetch('https://race-hospital-server.vercel.app/bookings',{
             method:'POST',
             headers:{
                 "content-type":"application/json"

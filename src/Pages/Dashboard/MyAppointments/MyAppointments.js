@@ -9,10 +9,10 @@ const MyAppointments = () => {
     const email = auth?.currentUser?.email
 
     useEffect( ()=> {
-        fetch(`http://localhost:5000/bookings?email=${email}`)
+        fetch(`https://race-hospital-server.vercel.app/bookings?email=${email}`)
         .then(res => res.json())
         .then(data => setAppointments(data))
-    },[])
+    },[email])
     
     return (
         <div>

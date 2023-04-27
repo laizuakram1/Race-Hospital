@@ -12,7 +12,7 @@ const [treatment, setTreatment] = useState(null)
 
 const {data:doctors = []} = useQuery({
     key:['doctors'],
-    queryFn:() => fetch('http://localhost:5000/doctors')
+    queryFn:() => fetch('https://race-hospital-server.vercel.app/doctors')
     .then(res => res.json())
 })
 
