@@ -16,6 +16,7 @@ import Prescription from './Pages/Dashboard/Prescription/Prescription';
 import Report from './Pages/Dashboard/Report/Report';
 import Payment from './Pages/Dashboard/Payment/Payment';
 import BloodBank from './Pages/BloodBank/BloodBank';
+import ContactPage from './Pages/ContactUs/Maps/ContactPage';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
         </Route>
         <Route path='/bloodBank' element = {<BloodBank></BloodBank>}></Route>
+        <Route path='/contactUs' element = {<ContactPage></ContactPage>}></Route>
 
       </Routes>
       <Toaster 

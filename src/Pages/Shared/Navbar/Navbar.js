@@ -28,7 +28,7 @@ const Navbar = () => {
                         <Link className='active-item' to='/'>Home</Link>
                         <Link to='/appointment'>Appointment</Link>
                         <Link to='/bloodBank'>Blood Bank</Link>
-                        <Link to='#'>Contact Us</Link>
+                        <Link to='/contactUs'>Contact Us</Link>
                         {/* {user?.uid ? <Link to='/signup'>SignOut</Link> : <Link to='/login'>Login</Link>} */}
                         {user?.uid ? <>
                             <Link to='/dashboard'>Dashboard</Link>
