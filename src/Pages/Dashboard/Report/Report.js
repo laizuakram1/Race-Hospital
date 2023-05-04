@@ -31,7 +31,7 @@ const Report = () => {
                     email,
                     image: data.data.url
                 }
-                fetch(`https://race-hospital-server.vercel.app/reports`, {
+                fetch(`https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/reports`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'
@@ -52,7 +52,7 @@ const Report = () => {
     }
 
     useEffect(() => {
-        const url = `https://race-hospital-server.vercel.app/reports?email=${email}`
+        const url = `https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/reports?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setReports(data))

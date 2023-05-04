@@ -18,7 +18,7 @@ const CheckOutForm = () => {
 
     useEffect(() => {
 
-        fetch("https://race-hospital-server.vercel.app/create-payment-intent", {
+        fetch("https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -9,7 +9,7 @@ const Testmonial = () => {
             <h3 className='text-3xl font-bold mb-5 ml-2'>Patient Says</h3>
             <div className='review-container grid md:grid-cols-3 gap-3 ml-10'>
                 <div className='review'>
-                    <p className='my-7 text-sm'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione iste ea incidunt dolores neque dolorum, nisi eius a qui iusto minus velit placeat asperiores cum?</p>
+                    <p className='my-7 text-sm'>Really, they provide good service and friendly attitude with patient and others person.If I tell about their Hospital environment that's awesome.</p>
                     <div className='flex items-center'>
                         <div className='mr-5 border-4 border-cyan-400 rounded-full p-0.5'>
                             <img className='w-16 h-16 ' src={people} alt="patient" />
@@ -27,8 +27,8 @@ const Testmonial = () => {
                             <img className='w-16 h-16 ' src={people} alt="patient" />
                         </div>
                         <div>
-                            <h3 className='font-bold text-teal-300'>Alex</h3>
-                            <p>USA</p>
+                            <h3 className='font-bold text-teal-300'>Brandon</h3>
+                            <p>California</p>
                         </div>
                     </div>
                 </div>
@@ -39,8 +39,8 @@ const Testmonial = () => {
                             <img className='w-16 h-16 ' src={people} alt="patient" />
                         </div>
                         <div>
-                            <h3 className='font-bold text-teal-300'>Alex</h3>
-                            <p>USA</p>
+                            <h3 className='font-bold text-teal-300'>Johnny</h3>
+                            <p>Canada</p>
                         </div>
                     </div>
                 </div>

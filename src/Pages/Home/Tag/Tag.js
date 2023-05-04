@@ -5,7 +5,7 @@ import {BsClockHistory, BsFillGeoAltFill,BsTelephoneFill} from 'react-icons/bs';
 const Tag = () => {
     return (
         <div className='card-container grid md:grid-cols-3 relative mt-80 ml-8'>
-            <div className="card card-main lg:card-side bg-base-100 shadow-xl">
+            <div className="card card-main lg:card-side bg-base-100 shadow-xl cursor-pointer">
                 <figure><BsClockHistory className='tag-icons'/></figure>
                 <div className="card-body">
                     <h2 className="card-title">Opening Hour</h2>
@@ -13,7 +13,7 @@ const Tag = () => {
                     
                 </div>
             </div>
-            <div className="card location-bg lg:card-side shadow-xl">
+            <div className="card location-bg lg:card-side shadow-xl cursor-pointer">
                 <figure><BsFillGeoAltFill className='tag-icons'/></figure>
                 <div className="card-body">
                     <h2 className="card-title">Our Locations</h2>
@@ -22,11 +22,12 @@ const Tag = () => {
                     
                 </div>
             </div>
-            <div className="card card-main lg:card-side bg-base-100 shadow-xl">
+            <div className="card card-main lg:card-side bg-base-100 shadow-xl cursor-pointer">
                 <figure><BsTelephoneFill className='tag-icons'/></figure>
                 <div className="card-body">
                     <h2 className="card-title">Contact Now</h2>
                     <p>+880 1717-015216</p>
+                    <p>+880 1712-393188</p>
                     
                 </div>
             </div>

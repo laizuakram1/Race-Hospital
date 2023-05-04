@@ -3,6 +3,7 @@ import './Banner.css';
 import slide from '../../../assets/images/slider/slide.jpg';
 import slide2 from '../../../assets/images/slider/slide2.jpg';
 import slide3 from '../../../assets/images/slider/slide3.jpg';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
 
@@ -17,7 +18,8 @@ const Banner = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
                                 <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                                <button className="button">Get Started</button>
+                                <Link to='/appointment'><button className='button'>Get Started</button></Link>
+
                             </div>
                         </div>
                     </div>
@@ -34,7 +36,8 @@ const Banner = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
                                 <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                                <button className="button">Get Started</button>
+                                <Link to='/appointment'><button className='button'>Get Started</button></Link>
+
                             </div>
                         </div>
                     </div>
@@ -53,7 +56,8 @@ const Banner = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
                                 <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                                <button className="button">Get Started</button>
+                                <Link to='/appointment'><button className='button'>Get Started</button></Link>
+
                             </div>
                         </div>
                     </div>

@@ -48,7 +48,7 @@ const Profile = () => {
 
                 }
 
-                fetch(`https://race-hospital-server.vercel.app/profile`, {
+                fetch(`https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/profile`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'
@@ -69,7 +69,7 @@ const Profile = () => {
     }
 
     useEffect(() => {
-        fetch(`https://race-hospital-server.vercel.app/profile`)
+        fetch(`https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/profile`)
             .then(res => res.json())
             .then(data => {
                 const updateProfile = data.slice(-1);

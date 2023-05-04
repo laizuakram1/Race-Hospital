@@ -13,7 +13,7 @@ const Payment = () => {
 
 
     useEffect(() => {
-        fetch(`https://race-hospital-server.vercel.app/bookings/${id}`)
+        fetch(`https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/bookings/${id}`)
             .then(res => res.json())
             .then(data => setBooked(data))
     }, [id])
