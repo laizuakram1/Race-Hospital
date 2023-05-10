@@ -52,7 +52,7 @@ const SignUp = () => {
                     .catch((err) => console.log(err))
 
                 
-
+                saveUsers(data.name, data.email);
                 navigate(from, { replace: true });
 
             })
@@ -74,6 +74,25 @@ const SignUp = () => {
         })
         .catch((error) =>{
             console.log(error.message)
+        })
+    }
+    const saveUsers = (name, email) =>{
+        const userData = {
+            name:name,
+            email:email
+            
+        }
+        console.log(userData)
+        fetch('http://localhost:5000/users',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json',
+            },
+            body: JSON.stringify(userData),
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
         })
     }
 
