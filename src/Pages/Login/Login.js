@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { SiGnuprivacyguard } from 'react-icons/si';
 import { FcGoogle } from 'react-icons/fc';
@@ -6,24 +6,24 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
+import useToken from '../../hooks/useToken';
 
 const provider = new GoogleAuthProvider();
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { userLogin, auth } = useContext(AuthContext);
+    const [userEmail, setUserEmail] = useState('');
+    const [token] = useToken(userEmail);
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathName || '/';
 
-
-
     const handleLogIn = data => {
         userLogin(data.email, data.password)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                const userEmail = result.user.email;
                 toast('Login successfully', {
                     duration: 5000,
                     position: 'bottom-right',
@@ -31,7 +31,9 @@ const Login = () => {
                     icon: '👏',
 
                 });
+                setUserEmail(userEmail)
                 navigate(from, { replace: true });
+                
             })
             .catch(error => console.log(error));
     }
@@ -39,9 +41,7 @@ const Login = () => {
     const googleSignIn = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
-                const googleUser = result.user;
                 navigate(from, { replace: true });
-                console.log(googleUser)
             })
             .catch((error) => {
                 console.log(error.message)

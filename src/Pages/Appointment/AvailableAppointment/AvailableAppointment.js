@@ -19,7 +19,7 @@ const [treatment, setTreatment] = useState(null)
 // })
 
     useEffect(() =>{
-        fetch('https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/doctors')
+        fetch('http://localhost:5000/doctors')
         .then(res => res.json())
         .then(data => setDoctors(data));
     },[])

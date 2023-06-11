@@ -6,12 +6,17 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 const MyAppointments = () => {
     const {auth} = useContext(AuthContext);
     const [appointments, setAppointments] = useState([])
-    const email = auth?.currentUser?.email
+    const email = auth?.currentUser?.email;
 
     useEffect( ()=> {
-        fetch(`https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/bookings?email=${email}`)
+        fetch(`http://localhost:5000/bookings?email=${email}`,{
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
         .then(res => res.json())
         .then(data => setAppointments(data))
+        
     },[email])
     
     return (
@@ -36,7 +41,7 @@ const MyAppointments = () => {
                             appointments.map((appointment, i) => <tr className='hover'
                             key={i}
                             >
-                            <th>{i}</th>
+                            <th>{i+1}</th>
                             <td>{appointment.name}</td>
                             <td>{appointment.specialist}</td>
                             <td>{appointment.date}</td>

@@ -21,6 +21,9 @@ const Prescription = () => {
 
         fetch(`https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`, {
             method: "POST",
+            headers: {
+                'Content-Type':'application/json'
+            },
             body: formData,
         })
             .then((res) => res.json())
@@ -31,7 +34,7 @@ const Prescription = () => {
                     email,
                     image: data.data.url
                 }
-                fetch(`https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/prescription`, {
+                fetch(`http://localhost:5000/prescription`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'
@@ -53,7 +56,7 @@ const Prescription = () => {
     }
 
     useEffect(() => {
-        const url = `https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/prescription?email=${email}`
+        const url = `http://localhost:5000/prescription?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setPrescription(data))

@@ -7,18 +7,24 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
+import useToken from '../../hooks/useToken';
 
 const provider = new GoogleAuthProvider();
 
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const {sigUpError, setSignUpError} = useState('')
-    const { createUser, updateUser, verifyEmail, auth } = useContext(AuthContext);
+    const [sigUpError, setSignUpError] = useState('')
+    const [createdUserEmail, setCreatedUserEmail] = useState('');
+    const { createUser, updateUser,verifyEmail, auth } = useContext(AuthContext);
+    const [token] = useToken(createdUserEmail);
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathName || '/'
+    if(token){
+        navigate(from, { replace: true });
+    }
 
     const handleSignUp = data => {
         
@@ -52,7 +58,7 @@ const SignUp = () => {
                     .catch((err) => console.log(err))
 
                 
-                saveUsers(data.name, data.email);
+                saveUsers(data?.name, data?.email);
 
             })
 
@@ -91,24 +97,12 @@ const SignUp = () => {
         })
         .then(res => res.json())
         .then(data => {
-            getUserToken(email)
+            console.log(data)
+            setCreatedUserEmail(email)
         })
     }
 
-    const getUserToken = email =>{
-        fetch(`http://localhost:5000/jwt?email=${email}`)
-        .then(res => res.json())
-        .then(data =>{
-            if(data.accessToken){
-                localStorage.setItem('accessToken', data.accessToken)
-                navigate(from, { replace: true });
-            }
-            
-        })
-    }
-
-   
-
+    
 
     return (
         <div className='form-container'>
