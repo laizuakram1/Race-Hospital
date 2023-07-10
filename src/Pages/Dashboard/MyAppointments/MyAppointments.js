@@ -6,10 +6,11 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 const MyAppointments = () => {
     const {auth} = useContext(AuthContext);
     const [appointments, setAppointments] = useState([])
-    const email = auth?.currentUser?.email;
+    const email = auth.currentUser?.email;
+    console.log(email)
 
     useEffect( ()=> {
-        fetch(`http://localhost:5000/bookings?email=${email}`,{
+        fetch(`https://race-hospital-server.vercel.app/bookings?email=${email}`,{
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
             }

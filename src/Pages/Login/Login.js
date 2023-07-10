@@ -13,27 +13,28 @@ const provider = new GoogleAuthProvider();
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { userLogin, auth } = useContext(AuthContext);
-    const [userEmail, setUserEmail] = useState('');
-    const [token] = useToken(userEmail);
+    const [loginUserEmail, setLoginUserEmail] = useState('');
+    const [token] = useToken(loginUserEmail);
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathName || '/';
+    if(token){
+        navigate('/')
+    }
 
     const handleLogIn = data => {
         userLogin(data.email, data.password)
             .then(result => {
                 const userEmail = result.user.email;
+                console.log(userEmail)
+                setLoginUserEmail(userEmail)  
                 toast('Login successfully', {
                     duration: 5000,
                     position: 'bottom-right',
                     // Custom Icon
                     icon: '👏',
-
-                });
-                setUserEmail(userEmail)
-                navigate(from, { replace: true });
-                
+                });  
             })
             .catch(error => console.log(error));
     }

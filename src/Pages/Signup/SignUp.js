@@ -88,7 +88,7 @@ const SignUp = () => {
             
         }
 
-        fetch('http://localhost:5000/users',{
+        fetch('https://race-hospital-server.vercel.app/users',{
             method:'POST',
             headers:{
                 'content-type':'application/json',
@@ -97,7 +97,6 @@ const SignUp = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             setCreatedUserEmail(email)
         })
     }
