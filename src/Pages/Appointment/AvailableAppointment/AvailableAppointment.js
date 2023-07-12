@@ -9,7 +9,15 @@ const AvailableAppointment = ({selectedDate}) => {
 
 const [doctors, setDoctors] = useState([])
 const [treatment, setTreatment] = useState(null)
+// const [loader, setLoader] = useState(false)
 
+// useEffect(()=>{
+//     setLoader(true)
+//     setTimeout(()=>{
+//         setLoader(false)
+        
+//     },5000)
+// },[])
 
 // load data using query function
 // const {data:doctors = []} = useQuery({
@@ -19,13 +27,14 @@ const [treatment, setTreatment] = useState(null)
 // })
 
     useEffect(() =>{
-        fetch('https://race-hospital-server.vercel.app/doctors')
+        fetch('http://localhost:5000/doctors')
         .then(res => res.json())
         .then(data => setDoctors(data));
     },[])
 
     return (
-        <div>
+        <>
+            <div>
             <h3 className='text-2xl text-teal-400 font-bold text-center mt-10'>Available Appointment on:{format(selectedDate, 'PP')}</h3>
             <div className='grid md:grid-cols-3 gap-y-5 text-center my-10'>
             {
@@ -46,6 +55,8 @@ const [treatment, setTreatment] = useState(null)
             ></BookingModal>
         }
         </div>
+        
+        </>
     );
 };
 

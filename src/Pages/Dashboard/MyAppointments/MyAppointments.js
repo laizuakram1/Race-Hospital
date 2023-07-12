@@ -7,10 +7,9 @@ const MyAppointments = () => {
     const {auth} = useContext(AuthContext);
     const [appointments, setAppointments] = useState([])
     const email = auth.currentUser?.email;
-    console.log(email)
 
     useEffect( ()=> {
-        fetch(`https://race-hospital-server.vercel.app/bookings?email=${email}`,{
+        fetch(`http://localhost:5000/bookings?email=${email}`,{
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
             }
