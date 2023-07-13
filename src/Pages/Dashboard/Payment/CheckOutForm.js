@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 
 const CheckOutForm = () => {
+    
     const [cardError, setCardError] = useState('')
     const [clientSecret, setClientSecret] = useState("");
     const [success, setSuccess] = useState('');
@@ -11,6 +12,10 @@ const CheckOutForm = () => {
 
     const stripe = useStripe();
     const elements = useElements();
+    
+   
+
+    //this is a random price but realtime it changable
     const price = {
         price: 200
     }
@@ -18,7 +23,7 @@ const CheckOutForm = () => {
 
     useEffect(() => {
 
-        fetch("https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/create-payment-intent", {
+        fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -53,6 +58,8 @@ const CheckOutForm = () => {
         }
         setSuccess('')
         setProcessing(true)
+        
+        
         const { paymentIntent, error:confirmError } = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -70,12 +77,35 @@ const CheckOutForm = () => {
             return;
         }
         if(paymentIntent.status === "succeeded"){
-            setSuccess(`Congrats!$ ${paymentIntent.amount} payment successfull.`)
-            setTransactionId(paymentIntent.id)
-            setProcessing(false)
+            
+
+            const payment={
+                price,
+                transactionId: paymentIntent.id
+                
+            }
+
+            //STORE PAYMENT IN DATABASE
+            fetch(`http://localhost:5000/payments`,{
+            method:'POST',
+            headers:{
+                "Content-type":"application/json",
+            },
+            body:JSON.stringify(payment)
+        })
+        .then(res => res.json())
+            .then(data =>{
+                if(data.insertedId){
+                    console.log(data)
+                    setSuccess(`Congrats!$ ${paymentIntent.amount} payment successfull.`)
+                    setTransactionId(paymentIntent.id)
+                    setProcessing(false)
+                }
+            })
         } 
         console.log(paymentIntent);
     };
+   
 
     return (
         <form onSubmit={handleSubmit}>

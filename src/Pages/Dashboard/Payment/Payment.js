@@ -13,7 +13,7 @@ const Payment = () => {
 
 
     useEffect(() => {
-        fetch(`https://race-hospital-server.vercel.app/bookings/${id}`)
+        fetch(`http://localhost:5000/bookings/${id}`)
             .then(res => res.json())
             .then(data => setBooked(data))
     }, [id])
@@ -22,7 +22,7 @@ const Payment = () => {
 
     return (
         <div className='m-5'>
-            <h3 className='text-xl'>Please pay <strong className='text-orange-400'>${booked?.price}</strong> for {booked?.specialist} Appointment fee on {booked?.date} {booked?.day} at {booked?.time}.</h3>
+            <h3 className='text-xl'>Please pay <strong className='text-orange-400'>${booked?.price}</strong> for <strong className='text-orange-400'>{booked?.specialist}</strong> Appointment fee on <strong className='text-orange-400'>{booked?.date} {booked?.day} </strong>at <strong className='text-orange-400'>{booked?.time}.</strong></h3>
 
             <div className='w-96 my-12'>
                 <Elements stripe={stripePromise}>

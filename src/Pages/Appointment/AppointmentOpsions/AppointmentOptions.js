@@ -1,4 +1,5 @@
 import React from 'react';
+import '../AppointmentOpsions/AppointmentOptions.css';
 
 const AppointmentOptions = ({doctor, setTreatment}) => {
     return (

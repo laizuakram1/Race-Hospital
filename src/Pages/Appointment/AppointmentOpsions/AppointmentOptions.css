@@ -1,0 +1,10 @@
+
+
+
+/* Responsive with media query */
+@media only screen and (max-width: 600px) {
+    .card{
+        margin-bottom:15px;
+        max-width:350px;
+    }
+}
