@@ -47,7 +47,13 @@ const MyAppointments = () => {
                             <td>{appointment.date}</td>
                             <td>{appointment.day}</td>
                             <td>{appointment.time}</td>
-                            <td><Link to={`/dashboard/payment/${appointment._id}`}><button className="btn btn-xs btn-success">Pay</button></Link></td>
+                            {
+                                appointment.paid?
+                                <td><button className="btn btn-xs btn-dark">paid</button></td>
+                                :
+                                <td><Link to={`/dashboard/payment/${appointment._id}`}><button className="btn btn-xs btn-success">Pay</button></Link></td>
+                            }
+                            
                             
                         </tr> )
                         }

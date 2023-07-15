@@ -30,7 +30,7 @@ const Profile = () => {
         const formData = new FormData();
         formData.append("image", image);
 
-        fetch(`https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`, {
+        fetch(`https://api.imgbb.com/1/upload?key=${imageHostKey}`, {
             method: "POST",
             body: formData,
         })
@@ -48,7 +48,7 @@ const Profile = () => {
 
                 }
 
-                fetch(`https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/profile`, {
+                fetch(`http://localhost:5000/profile`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'
@@ -69,7 +69,7 @@ const Profile = () => {
     }
 
     useEffect(() => {
-        fetch(`https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/profile`)
+        fetch(`http://localhost:5000/profile`)
             .then(res => res.json())
             .then(data => {
                 const updateProfile = data.slice(-1);

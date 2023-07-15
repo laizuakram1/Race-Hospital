@@ -19,7 +19,7 @@ const Report = () => {
         const formData = new FormData();
         formData.append("image", image);
 
-        fetch(`https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`, {
+        fetch(`https://api.imgbb.com/1/upload?key=${imageHostKey}`, {
             method: "POST",
             body: formData,
         })
@@ -31,7 +31,7 @@ const Report = () => {
                     email,
                     image: data.data.url
                 }
-                fetch(`https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/reports`, {
+                fetch(`http://localhost:5000/reports`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'
@@ -52,7 +52,7 @@ const Report = () => {
     }
 
     useEffect(() => {
-        const url = `https://race-hospital-server-e3mhyxjma-laizuakram1.vercel.app/reports?email=${email}`
+        const url = `http://localhost:5000/reports?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setReports(data))

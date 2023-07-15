@@ -2,7 +2,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
 
-const CheckOutForm = () => {
+const CheckOutForm = ({booking}) => {
     
     const [cardError, setCardError] = useState('')
     const [clientSecret, setClientSecret] = useState("");
@@ -12,6 +12,7 @@ const CheckOutForm = () => {
 
     const stripe = useStripe();
     const elements = useElements();
+    const id = booking?._id;
     
    
 
@@ -81,6 +82,7 @@ const CheckOutForm = () => {
 
             const payment={
                 price,
+                bookingId:id,
                 transactionId: paymentIntent.id
                 
             }
