@@ -17,7 +17,7 @@ import Payment from "./Pages/Dashboard/Payment/Payment";
 import BloodBank from "./Pages/BloodBank/BloodBank";
 import ContactPage from "./Pages/ContactUs/Maps/ContactPage";
 import { useEffect, useState } from "react";
-import { Dna } from "react-loader-spinner";
+import Loader from "./assets/Loader/Loader";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -31,15 +31,7 @@ function App() {
   return (
     <>
       {loading ? (
-        <Dna
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper"
-
-        />
+        <Loader></Loader>
       ) : (
         <div className="App">
           <Routes>
