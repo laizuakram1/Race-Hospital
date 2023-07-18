@@ -20,7 +20,6 @@ const Dashboard = () => {
                     
                     <Outlet></Outlet>
                     
-
                 </div>
                 <div className="drawer-side">
                     <label  htmlFor="dashboard-drawer" className="drawer-overlay"></label>

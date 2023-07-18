@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 
@@ -14,11 +13,10 @@ const Profile = () => {
 
 
 
-
     const onSubmit = data => {
         const image = data.image[0]
-        const name = data.name
-        const email = data.email
+        // const name = data.name
+        // const email = data.email
         const birthdate = data.birthdate
         const bloodgroup = data.bloodgroup
         const totaldonate = data.totaldonate
@@ -37,7 +35,7 @@ const Profile = () => {
             .then((res) => res.json())
             .then((data) => {
                 const userInfo = {
-                    image: data.data.image.url,
+                    image: data?.data?.image.url,
                     // name: name,
                     // email: email,
                     birthdate: birthdate,

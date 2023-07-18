@@ -63,7 +63,6 @@ const SignUp = () => {
             })
 
             .catch(error => {
-                console.log(error)
                 setSignUpError(error.message)
             })
 
@@ -88,7 +87,7 @@ const SignUp = () => {
             
         }
 
-        fetch('https://race-hospital-server.vercel.app/users',{
+        fetch('http://localhost:5000/users',{
             method:'POST',
             headers:{
                 'content-type':'application/json',
