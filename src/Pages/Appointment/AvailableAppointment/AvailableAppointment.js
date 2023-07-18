@@ -27,7 +27,7 @@ const [treatment, setTreatment] = useState(null)
 // })
 
     useEffect(() =>{
-        fetch('http://localhost:5000/doctors')
+        fetch('https://race-hospital-server.vercel.app/doctors')
         .then(res => res.json())
         .then(data => setDoctors(data));
     },[])
