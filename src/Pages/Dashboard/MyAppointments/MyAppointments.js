@@ -9,7 +9,7 @@ const MyAppointments = () => {
     const email = auth.currentUser?.email;
 
     useEffect( ()=> {
-        fetch(`https://race-hospital-server.vercel.app/bookings?email=${email}`,{
+        fetch(`https://race-hospital-server.onrender.com/bookings?email=${email}`,{
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
             }

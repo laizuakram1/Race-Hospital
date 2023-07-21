@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 import AppointmentOptions from '../AppointmentOpsions/AppointmentOptions';
 import BookingModal from '../BookingModal/BookingModal';
+import Loader from '../../../assets/Loader/Loader';
 
 
 const AvailableAppointment = ({selectedDate}) => {
@@ -27,7 +28,7 @@ const [treatment, setTreatment] = useState(null)
 // })
 
     useEffect(() =>{
-        fetch('https://race-hospital-server.vercel.app/doctors')
+        fetch('https://race-hospital-server.onrender.com/doctors')
         .then(res => res.json())
         .then(data => setDoctors(data));
     },[])
@@ -55,7 +56,7 @@ const [treatment, setTreatment] = useState(null)
             ></BookingModal>
         }
         </div>
-        
+
         </>
     );
 };

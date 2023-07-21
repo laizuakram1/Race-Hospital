@@ -24,7 +24,7 @@ const CheckOutForm = ({booking}) => {
 
     useEffect(() => {
 
-        fetch("https://race-hospital-server.vercel.app/create-payment-intent", {
+        fetch("https://race-hospital-server.onrender.com/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -88,7 +88,7 @@ const CheckOutForm = ({booking}) => {
             }
 
             //STORE PAYMENT IN DATABASE
-            fetch(`https://race-hospital-server.vercel.app/payments`,{
+            fetch(`https://race-hospital-server.onrender.com/payments`,{
             method:'POST',
             headers:{
                 "Content-type":"application/json",

@@ -87,7 +87,7 @@ const SignUp = () => {
             
         }
 
-        fetch('https://race-hospital-server.vercel.app/users',{
+        fetch('https://race-hospital-server.onrender.com/users',{
             method:'POST',
             headers:{
                 'content-type':'application/json',

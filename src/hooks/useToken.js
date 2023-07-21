@@ -5,7 +5,7 @@ const useToken = email =>{
 
     useEffect(()=>{
         if(email){
-            fetch(`https://race-hospital-server.vercel.app/jwt?email=${email}`)
+            fetch(`https://race-hospital-server.onrender.com/jwt?email=${email}`)
         .then(res => res.json())
         .then(data =>{
             if(data.accessToken){
