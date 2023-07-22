@@ -1,3 +1,11 @@
 .drawer-side{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+
+
+/* responsive with media query */
+@media only screen and (max-width: 600px) {
+    .drawer-content{
+        overflow:scroll;
+    }
+}

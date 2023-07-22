@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../../Contexts/AuthProvider';
+import { AiFillCheckCircle } from 'react-icons/ai';
 
 
 const Profile = () => {
@@ -78,21 +79,22 @@ const Profile = () => {
 
     return (
         <div>
-            <h3 className='text-3xl bold text-success m-3 text-center'>Your Profile</h3>
+            {profiles?.birthdate ? <h3 className='text-xl bold text-success flex justify-center items-center mt-5'><AiFillCheckCircle className='inline text-xl'></AiFillCheckCircle> profile updated</h3> : <h3 className='text-xl bold text-warning m-3 text-center'>*please update your profile first</h3>}
+            
             <div className='w-full flex justify-center'>
-                <div className="card w-1/2 bg-base-100 shadow-xl">
+                <div className="card w-3/4 bg-base-100 shadow-xl">
                     <figure className="px-5 pt-5">
                         <img src={profiles?.image} alt="user" className="rounded-xl h-48 w-48" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">{user?.displayName}</h2>
                         <p>{user?.email}</p>
-                        <p>Date of Birth: <span className="badge badge-secondary badge-outline">{profiles.birthdate}</span></p>
+                        <p>Date of Birth: <span className="badge badge-secondary badge-outline drawer-content">{profiles.birthdate}</span></p>
                         <button className="btn btn-outline gap-2">
                             Blood Group:
-                            <div className="badge badge-secondary">{profiles.bloodgroup}</div>
+                            <div className="badge badge-secondary drawer-content">{profiles.bloodgroup}</div>
                         </button>
-                        <button className="btn btn-outline gap-2">
+                        <button className="btn btn-outline gap-2 drawer-content mt-2">
                             Total Blood Donate
                             <div className="badge badge-secondary">{profiles.totaldonate}</div>
                         </button>

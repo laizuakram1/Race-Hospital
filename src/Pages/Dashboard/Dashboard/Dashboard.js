@@ -17,13 +17,12 @@ const Dashboard = () => {
                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
                     {/* <!-- Page content here --> */}
-                    
                     <Outlet></Outlet>
-                    
+                    {/* <label htmlFor='dashboard-drawer'> open drawer</label> */}
                 </div>
                 <div className="drawer-side">
                     <label  htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul tabIndex={1} className="menu p-4 w-80 bg-current rounded">
+                    <ul tabIndex={4} className="menu p-4 w-80 bg-current rounded">
                         {/* <!-- Sidebar content here --> */}
                         <li className='text-white'><Link to='/dashboard'><BsFillCalendar2CheckFill className='text-2xl text-cyan-400'/>My Appointments</Link></li>
                         <li className='text-white'><Link to='/dashboard/profile'><ImProfile className='text-2xl text-cyan-400'/>Profile</Link></li>
