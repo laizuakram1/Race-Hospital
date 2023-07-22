@@ -24,7 +24,7 @@ const BookingModal = ({ treatment,setTreatment, selectedDate }) => {
             
         }
         
-        fetch('https://race-hospital-server.onrender.com/bookings',{
+        fetch('http://localhost:5000/bookings',{
             method:'POST',
             headers:{
                 "content-type":"application/json"

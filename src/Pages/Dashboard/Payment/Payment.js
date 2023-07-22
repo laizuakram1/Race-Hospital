@@ -13,7 +13,7 @@ const Payment = () => {
 
 
     useEffect(() => {
-        fetch(`https://race-hospital-server.onrender.com/bookings/${id}`)
+        fetch(`http://localhost:5000/bookings/${id}`)
             .then(res => res.json())
             .then(data => setBooked(data))
     }, [id])

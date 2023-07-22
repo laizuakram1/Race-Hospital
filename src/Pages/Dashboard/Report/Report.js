@@ -31,7 +31,7 @@ const Report = () => {
                     email,
                     image: data.data.url
                 }
-                fetch(`https://race-hospital-server.onrender.com/reports`, {
+                fetch(`http://localhost:5000/reports`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'
@@ -52,7 +52,7 @@ const Report = () => {
     }
 
     useEffect(() => {
-        const url = `https://race-hospital-server.onrender.com/reports?email=${email}`
+        const url = `http://localhost:5000/reports?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setReports(data))

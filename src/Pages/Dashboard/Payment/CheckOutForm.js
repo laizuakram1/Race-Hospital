@@ -24,7 +24,7 @@ const CheckOutForm = ({booking}) => {
 
     useEffect(() => {
 
-        fetch("https://race-hospital-server.onrender.com/create-payment-intent", {
+        fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -88,7 +88,7 @@ const CheckOutForm = ({booking}) => {
             }
 
             //STORE PAYMENT IN DATABASE
-            fetch(`https://race-hospital-server.onrender.com/payments`,{
+            fetch(`http://localhost:5000/payments`,{
             method:'POST',
             headers:{
                 "Content-type":"application/json",

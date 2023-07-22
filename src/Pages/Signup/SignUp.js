@@ -87,7 +87,7 @@ const SignUp = () => {
             
         }
 
-        fetch('https://race-hospital-server.onrender.com/users',{
+        fetch('http://localhost:5000/users',{
             method:'POST',
             headers:{
                 'content-type':'application/json',

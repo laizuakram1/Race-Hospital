@@ -46,7 +46,7 @@ const Profile = () => {
 
                 }
 
-                fetch(`https://race-hospital-server.onrender.com/profile`, {
+                fetch(`http://localhost:5000/profile`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'
@@ -67,7 +67,7 @@ const Profile = () => {
     }
 
     useEffect(() => {
-        fetch(`https://race-hospital-server.onrender.com/profile`)
+        fetch(`http://localhost:5000/profile`)
             .then(res => res.json())
             .then(data => {
                 const updateProfile = data.slice(-1);

@@ -28,7 +28,7 @@ const [treatment, setTreatment] = useState(null)
 // })
 
     useEffect(() =>{
-        fetch('https://race-hospital-server.onrender.com/doctors')
+        fetch('http://localhost:5000/doctors')
         .then(res => res.json())
         .then(data => setDoctors(data));
     },[])
